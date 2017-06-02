@@ -1,0 +1,13 @@
+{
+    "name": "hard/cmsbml",
+    "description": "Integration libs for csmbml",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hard.com.ve",
+            "email": "hardprojects@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
