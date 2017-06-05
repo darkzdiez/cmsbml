@@ -1,8 +1,8 @@
 <?php
 namespace Hard\CmsBml;
 
-use App\Page;
-use App\PageContent;
+use Hard\CmsBml\Models\Page;
+use Hard\CmsBml\Models\PageContent;
 use App;
 class DPage
 {
@@ -18,6 +18,9 @@ class DPage
 				return $route_name.'-'.$lang;
 			}
 		} else {
+			if ($route_name == 'home') {
+				return '/';
+			}
 			return $route_name.'-'.$lang;
 		}
 	}

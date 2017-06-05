@@ -1,15 +1,17 @@
 <?php
 namespace Hard\CmsBml;
 
+use Illuminate\Support\Facades\File;
+
 Class Thumbnail {
 	
 	public static function generate ($_path, $_file, $div_width, $div_height, $forceEXT=NULL) {
 		$image_path = $_path . $_file;
 		$ext = '';
 		if($forceEXT != NULL){
-			$ext = $forceEXT;
+			$ext = '.' . $forceEXT;
 		}
-		$thumbnailpath = $_path . 'thumbnails/'. $div_width . 'x' . $div_height . $_file . '.' . $ext;
+		$thumbnailpath = $_path . 'thumbnails/'. $div_width . 'x' . $div_height . $_file . $ext;
 		if(file_exists($thumbnailpath)){
 			return $thumbnailpath;
 		}
@@ -58,7 +60,6 @@ Class Thumbnail {
 		$thumb_img = imagecreatetruecolor ($xMax, $yMax);
 
 		imagecopyresized($thumb_img, $img, 0-$left, 0-$top, 0, 0, $xCapa, $yCapa, $xVal, $yVal);
-
 		$result = self::saveImage($thumbnailpath, $thumb_img, 100,$forceEXT);
 		imagedestroy($thumb_img);
 
@@ -78,13 +79,13 @@ Class Thumbnail {
 		}
 		switch ($ext) {
 			case 'jpg': case 'jpeg':
-			return imagejpeg($image, $imagepath, $quality);
+				return imagejpeg($image, $imagepath, $quality);
 			case 'gif':
-			return imagegif($image, $imagepath);
+				return imagegif($image, $imagepath);
 			case 'png':
-			return imagepng($image, $imagepath, 9);
+				return imagepng($image, $imagepath, 9);
 			default:
-			return false;
+				return false;
 		}
 	}
 

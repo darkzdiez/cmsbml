@@ -3,6 +3,7 @@ namespace Hard\CmsBml\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Facades\Hard\CmsBml\Date;
 
 class Content extends Model {
 	use SoftDeletes;
@@ -17,7 +18,9 @@ class Content extends Model {
 	{
 		return $this->belongsToMany('App\Term', 'content_term', 'content_id', 'terms_id');
 	}
-
+	public function dateText(){
+		return Date::getDateText($this->created_at);
+	}
 	public function author()
 	{
 		return $this->belongsTo('\App\User', 'user_id');

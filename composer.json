@@ -9,5 +9,13 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Hard\\CmsBml\\": "src/"
+        },
+        "files": [
+            "src/Support/helpers.php"
+        ]
+    }
 }

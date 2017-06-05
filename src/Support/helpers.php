@@ -65,7 +65,7 @@ if (! function_exists('activeMatch')) {
         }
     }
 }
-use Facades\App\Libs\DPage;
+use Facades\Hard\CmsBml\DPage;
 if (! function_exists('dpu')) {
     /**
      * Generate Title for table filter.
