@@ -15,7 +15,7 @@ class Page extends Model {
 	protected $table = 'pages';
 	
 	public function PageContent() {
-		return $this->hasMany('\App\PageContent', 'page_id', 'id');
+		return $this->hasMany('\Hard\CmsBml\Models\PageContent', 'page_id', 'id');
 	}
 
 }

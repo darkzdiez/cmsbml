@@ -14,7 +14,7 @@ class PageContent extends Model {
 
 	public function Page()
 	{
-		return $this->belongsTo('\App\PageContent', 'page_id');
+		return $this->belongsTo('\Hard\CmsBml\Models\PageContent', 'page_id');
 	}
 
 }

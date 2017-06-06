@@ -16,20 +16,20 @@ class Content extends Model {
 	protected $table = 'content';
 	public function terms()
 	{
-		return $this->belongsToMany('App\Term', 'content_term', 'content_id', 'terms_id');
+		return $this->belongsToMany('\Hard\CmsBml\Models\Term', 'content_term', 'content_id', 'terms_id');
 	}
 	public function dateText(){
 		return Date::getDateText($this->created_at);
 	}
 	public function author()
 	{
-		return $this->belongsTo('\App\User', 'user_id');
+		return $this->belongsTo('\Hard\CmsBml\Models\User', 'user_id');
 	}
 	public function revision() {
-		return $this->hasMany('\App\Content', 'content_parent', 'id');
+		return $this->hasMany('\Hard\CmsBml\Models\Content', 'content_parent', 'id');
 	}
 	public function original(){
-		return $this->belongsTo('\App\Content', 'content_parent', 'id');
+		return $this->belongsTo('\Hard\CmsBml\Models\Content', 'content_parent', 'id');
 	}
 
 }

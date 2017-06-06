@@ -8,12 +8,12 @@ class Term extends Model {
 	use SoftDeletes;
 	protected $table = 'terms';
 	public function Posts() {
-		return $this->belongsToMany('App\Posts', 'post_term', 'terms_id', 'post_id');
+		return $this->belongsToMany('\Hard\CmsBml\Models\Content', 'post_term', 'terms_id', 'post_id');
 	}
 	public function Child() {
-		return $this->hasMany('\App\Term', 'parent', 'id');
+		return $this->hasMany('\Hard\CmsBml\Models\Term', 'parent', 'id');
 	}
 	public function Parent(){
-		return $this->belongsTo('\App\Term', 'parent', 'id');
+		return $this->belongsTo('\Hard\CmsBml\Models\Term', 'parent', 'id');
 	}
 }
