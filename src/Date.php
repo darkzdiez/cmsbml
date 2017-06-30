@@ -3,9 +3,9 @@ namespace Hard\CmsBml;
 
 class Date
 {
-	public function getMonthText(int $num)
+	public function getMonthText($num)
 	{
-		switch ($num) {
+		switch (intval($num)) {
 			case 1:
 				return "Enero";
 				break;
