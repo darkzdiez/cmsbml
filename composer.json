@@ -8,9 +8,9 @@
             "email": "hardprojects@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "require": {},
+    "require": {
+        "php": ">=5.5.9"
+    },
     "autoload": {
         "psr-4": {
             "Hard\\CmsBml\\": "src/"
@@ -19,4 +19,5 @@
             "src/Support/helpers.php"
         ]
     }
+    "minimum-stability": "stable"
 }
