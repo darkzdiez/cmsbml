@@ -3,7 +3,7 @@ namespace Hard\CmsBml\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Facades\Hard\CmsBml\Date;
+use Facades\Hard\Utils\Date;
 
 class Content extends Model {
 	use SoftDeletes;
